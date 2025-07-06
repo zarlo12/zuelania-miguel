@@ -25,7 +25,7 @@ function generarCodigoFijo(nombre) {
   return Math.abs(hash).toString(36).substring(0, 6).toUpperCase(); // Convertir el hash a base 36 y truncar
 }
 
-const baseUrl = "https://mis-xv-luisa-2025.vercel.app";
+const baseUrl = "https://boda-zuelania-miguel.vercel.app";
 
 // Función para mostrar y ocultar el indicador de cargadfxg
 function mostrarCargando(mostrar) {
@@ -46,7 +46,7 @@ async function generarListaInvitados(filtro = "") {
   container.innerHTML = "";
 
   const querySnapshot = await db
-    .collection("invitadosxvluisaAbril")
+    .collection("invitadosBodaMiguelZuelania")
     .orderBy("fechaCreacion", "desc")
     .get();
   const invitados = querySnapshot.docs.map((doc) => ({
@@ -199,7 +199,7 @@ window.agregarInvitado = async function () {
   const codigo = generarCodigoFijo(nombreInvitado);
   mostrarCargando(true);
 
-  await db.collection("invitadosxvluisaAbril").add({
+  await db.collection("invitadosBodaMiguelZuelania").add({
     invitado: nombreInvitado,
     acompanantes: acompanantes, // Se guarda como un array en Firebase
     codigo,
@@ -220,7 +220,7 @@ window.eliminarInvitado = async function (id) {
   );
   if (confirmacion) {
     mostrarCargando(true);
-    await db.collection("invitadosxvluisaAbril").doc(id).delete();
+    await db.collection("invitadosBodaMiguelZuelania").doc(id).delete();
     alert("Invitado eliminado con éxito");
     generarListaInvitados(); // Refrescar la lista
   }
@@ -237,7 +237,7 @@ window.editarInvitado = async function (id) {
     const codigo = generarCodigoFijo(nombreInvitado);
     mostrarCargando(true);
     await db
-      .collection("invitadosxvluisaAbril")
+      .collection("invitadosBodaMiguelZuelania")
       .doc(id)
       .update({
         invitado: nombreNuevo,
@@ -256,7 +256,7 @@ window.editarInvitado = async function (id) {
 //     for (const invitado of invitadosImportador) {
 //       const codigo = generarCodigoFijo(invitado.invitado); // Generar código
 
-//       await db.collection("invitadosxvluisaAbril").add({
+//       await db.collection("invitadosBodaMiguelZuelania").add({
 //         invitado: invitado.invitado,
 //         numeroInvitados: invitado.numeroInvitados,
 //         codigo: codigo,

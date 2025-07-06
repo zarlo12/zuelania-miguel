@@ -2900,7 +2900,7 @@
                               data-pen-placeholder="Teclea aquí..."
                               style="letter-spacing: normal"
                             >
-                              Invitación para:
+                              Invitación para3:
                             </h2>
                           </h2>
                         </div>
@@ -3092,7 +3092,7 @@
                         class="elementor-element elementor-element-23a780b8 elementor-invisible elementor-widget elementor-widget-heading"
                         data-id="23a780b8"
                         data-element_type="widget"
-                        id="list_invite_name"
+                        id="nombreInvitado"
                         data-settings='{"_animation":"fadeInDown"}'
                         data-widget_type="heading.default"
                       >
@@ -3136,6 +3136,39 @@
                             name="guest_list"
                             aria-label="guest_list"
                           >
+                            <style>
+                              .grupocss {
+                                display: flex;
+                                flex-wrap: wrap;
+                              }
+
+                              .opciuonescss {
+                                flex-basis: 100%;
+                              }
+
+                              .elementor-field-subgroupzzz {
+                                display: flex;
+                                flex-direction: column; /* Asegura que los checkboxes estén en columna */
+                                gap: 8px; /* Espaciado entre cada checkbox */
+                              }
+
+                              .elementor-field-optionzz {
+                                display: flex;
+                                align-items: center; /* Alinea el checkbox y el texto en la misma línea */
+                                gap: 10px; /* Espaciado entre el checkbox y el texto */
+                                font-size: 16px; /* Ajusta el tamaño del texto */
+                              }
+
+                              .elementor-field-optionzz input[type="checkbox"] {
+                                width: 18px;
+                                height: 18px;
+                                cursor: pointer; /* Hace que el cursor cambie al pasar sobre el checkbox */
+                              }
+
+                              .elementor-field-optionzz label {
+                                cursor: pointer; /* Permite hacer clic en el texto para marcar el checkbox */
+                              }
+                            </style>
                             <input type="hidden" name="post_id" value="13375" />
                             <input
                               type="hidden"
@@ -3168,8 +3201,11 @@
                                   Selecciona las personas que asistirán al
                                   evento
                                 </label>
-                                <div class="elementor-field-subgroup  ">
-                                  <span class="elementor-field-option"
+                                <div
+                                  class=" elementor-field-subgroupzzz grupocss"
+                                >
+                                  <span
+                                    class="elementor-field-optionzz opciuonescss"
                                     ><input
                                       type="checkbox"
                                       value=""
@@ -3187,7 +3223,7 @@
                                 <button
                                   class="elementor-button elementor-size-sm"
                                   type="submit"
-                                  id="btn_send_guests"
+                                  id="btn_send_counterzz"
                                 >
                                   <span
                                     class="elementor-button-content-wrapper"
